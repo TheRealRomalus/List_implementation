@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -252,6 +253,8 @@ public class MyArrayList<E> implements List<E> {
     public static void main(String[] args) {
 
         MyArrayList<String> test = new MyArrayList<>();
+
+        List<String> p = new LinkedList<>();
 
         test.lenght();
         test.add("eoiw");
