@@ -14,7 +14,7 @@ public class MyArrayList<E> implements List<E> {
         this(Initila_Capacity);
         size = 0;
 
-    }sun.font
+    }
 
     public MyArrayList(int capacity) {
         if (capacity <= 0) {
@@ -166,6 +166,10 @@ public class MyArrayList<E> implements List<E> {
     public List<E> subList(int fromIndex, int toIndex) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'subList'");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("hello");
     }
 
 }
