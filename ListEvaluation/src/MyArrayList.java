@@ -8,6 +8,7 @@ public class MyArrayList<E> implements List<E> {
     private E[] array;
     private int size;
     private static final int Initila_Capacity = 10;
+    int yab;
 
     public MyArrayList() {
         this(Initila_Capacity);
