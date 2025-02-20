@@ -92,12 +92,14 @@ public class MyLinkedList<E> implements List<E> {
             if (index == 0) {
                 temp.previousNode.nextNode = temp.nextNode;
                 temp.nextNode.previousNode = temp.previousNode;
+                size--;
                 return temp.data;
             }
 
             temp = temp.nextNode;
             index--;
         }
+
         return null;
 
     }
@@ -118,10 +120,11 @@ public class MyLinkedList<E> implements List<E> {
                         head = temp.nextNode;
 
                     } else {
-                        temp.previousNode.nextNode = temp.nextNode.previousNode;
-                        temp.nextNode.previousNode = temp.previousNode.nextNode;
+                        temp.previousNode.nextNode = temp.nextNode;
+                        temp.nextNode.previousNode = temp.previousNode;
 
                     }
+                    size--;
 
                     break;
                 }
@@ -269,11 +272,11 @@ public class MyLinkedList<E> implements List<E> {
         test.add(2);
 
         System.out.println(test);
-        System.out.println((test.remove((Integer) 1)) ? "did find and removed" : "didn't find ");
-        System.out.println(test);
+        System.out.println((test.remove((Integer) 2)) ? "did find and removed" : "didn't find ");
+        System.out.println(test.size);
 
         System.out.println(test);
-        System.out.println((test.remove((Integer) 2)) ? "did find and removed" : "didn't find ");
-        System.out.println(test);
+        System.out.println((test.remove((Integer) 4)) ? "did find and removed" : "didn't find ");
+        System.out.println(test.size);
     }
 }
