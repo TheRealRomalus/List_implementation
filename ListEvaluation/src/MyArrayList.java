@@ -14,7 +14,7 @@ public class MyArrayList<E> implements List<E> {
         this(Initila_Capacity);
         size = 0;
 
-    }sun.font
+    }
 
     public MyArrayList(int capacity) {
         if (capacity <= 0) {
