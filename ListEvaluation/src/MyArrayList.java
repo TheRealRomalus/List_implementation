@@ -168,4 +168,8 @@ public class MyArrayList<E> implements List<E> {
         throw new UnsupportedOperationException("Unimplemented method 'subList'");
     }
 
+    public static void main(String[] args) {
+        System.out.println("hello");
+    }
+
 }
