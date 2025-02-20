@@ -5,6 +5,7 @@ import java.util.ListIterator;
 
 public class MyLinkedList<E> implements List<E> {
 
+    @SuppressWarnings("hiding")
     private class Node<E> {
         private E data;
         private Node<E> nextNode;
@@ -84,6 +85,9 @@ public class MyLinkedList<E> implements List<E> {
     }
 
     public E remove(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index out of bound add");
+        }
 
         Node<E> temp = head;
 
@@ -104,6 +108,7 @@ public class MyLinkedList<E> implements List<E> {
 
     }
 
+    @SuppressWarnings("unchecked")
     public boolean remove(Object o) {
 
         Node<E> temp = head;

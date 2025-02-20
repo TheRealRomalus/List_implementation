@@ -1,7 +1,6 @@
-import java.util.ArrayList;
+
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -17,6 +16,7 @@ public class MyArrayList<E> implements List<E> {
 
     }
 
+    @SuppressWarnings("unchecked")
     public MyArrayList(int capacity) {
         if (capacity <= 10) {
             array = (E[]) new Object[Initila_Capacity];
@@ -55,6 +55,7 @@ public class MyArrayList<E> implements List<E> {
     }
 
     // just make size == 0
+    @SuppressWarnings("unchecked")
     public void clear() {
         array = (E[]) new Object[Initila_Capacity];
         numb_elements = 0;
@@ -79,6 +80,7 @@ public class MyArrayList<E> implements List<E> {
 
     }
 
+    @SuppressWarnings("unchecked")
     public boolean remove(Object object) {
 
         int index = 0;
@@ -123,6 +125,7 @@ public class MyArrayList<E> implements List<E> {
         if (array.length / 2 <= numb_elements) {
 
             // double size
+            @SuppressWarnings("unchecked")
             E[] tempArr = (E[]) new Object[array.length * 2];
 
             for (int i = 0; i < numb_elements; i++) {
@@ -133,6 +136,7 @@ public class MyArrayList<E> implements List<E> {
         } else if (array.length / 4 >= numb_elements) {
 
             //
+            @SuppressWarnings("unchecked")
             E[] tempArr = (E[]) new Object[array.length / 2];
 
             for (int i = 0; i < numb_elements; i++) {
@@ -142,10 +146,6 @@ public class MyArrayList<E> implements List<E> {
 
         }
 
-    }
-
-    public void lenght() {
-        System.out.println("array length; " + array.length);
     }
 
     @Override
@@ -248,89 +248,6 @@ public class MyArrayList<E> implements List<E> {
     public List<E> subList(int fromIndex, int toIndex) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'subList'");
-    }
-
-    public static void main(String[] args) {
-
-        MyArrayList<String> test = new MyArrayList<>();
-
-        List<String> p = new LinkedList<>();
-
-        test.lenght();
-        test.add("eoiw");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-        test.add("hello");
-        test.lenght();
-        test.add("eoiw");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-        test.add("hello");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-        test.add("hello");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-        test.remove(0);
-        test.lenght();
-
-        test.lenght();
-        test.add("eoiw");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-        test.add("hello");
-        test.lenght();
-        test.add("eoiw");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-        test.add("hello");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-        test.add("hello");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-        test.add("ppp");
-        test.lenght();
-
-        System.out.println(test);
-        System.out.println(test.size());
-
     }
 
 }
