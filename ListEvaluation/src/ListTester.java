@@ -259,79 +259,78 @@ public class ListTester {
                                     + "(ms) , "
                                     + values_not_found + " was NOT found");
                     writer.flush();
+                    writer.println("N = " + i + " ##### ArrayList Inserting  $$$$####");
+                    ArrayList_end = new ArrayList<>();
+                    writer.println(
+                            "Inserting @ the End =  " + ArrayList_Insertion(i, ArrayList_end, "end") + "(ms)");
+                    ArrayList_random = new ArrayList<>();
+                    writer.println(
+                            "Inserting @ Random location =  " + ArrayList_Insertion(i,
+                                    ArrayList_random, "random") + "(ms)");
+                    ArrayList_start = new ArrayList<>();
+                    writer.println(
+                            "Inserting @ the Start =  " + ArrayList_Insertion(i, ArrayList_start, "start") + "(ms)");
+
+                    writer.println("N = " + i + " ##### LinkedList Inserting  $$$$####");
+                    LinkedList_end = new LinkedList<>();
+                    writer.println(
+                            "Inserting @ the End =  " + ArrayList_Insertion(i, LinkedList_end, "end") + "(ms)");
+                    writer.flush();
+                    LinkedList_random = new LinkedList<>();
+                    writer.println(
+                            "Inserting @ Random location =  " + ArrayList_Insertion(i,
+                                    LinkedList_random, "random") + "(ms)");
+                    writer.flush();
+
+                    LinkedList_start = new LinkedList<>();
+                    writer.println(
+                            "Inserting @ the Start =  " + ArrayList_Insertion(i, LinkedList_start, "start") + "(ms)");
+                    writer.flush();
+
+                    writer.println("\nN = " + i + " $$$$ ArrayList Remove $$$$");
+
+                    writer.println(
+                            "Removal @ the End =  " + ArrayList_Remove(i, ArrayList_end, "end") + "(ms)");
+
+                    writer.println(
+                            "Removal @ Random location =  " + ArrayList_Remove(i,
+                                    ArrayList_random, "random") + "(ms), and " + index_out_bound
+                                    + " were out of bounds  and " + values_not_found + " values were not found");
+
+                    writer.println(
+                            "Removal @ the Start =  " + ArrayList_Remove(i, ArrayList_start, "start") + "(ms)");
+                    ArrayList_Byvalue = new ArrayList<>();
+                    temp = ArrayList_Insertion(i, ArrayList_Byvalue, "random");
+                    writer.println(
+                            "Removal @ the ByValue =  " + ArrayList_Remove(i, ArrayList_Byvalue, "byValue")
+                                    + "(ms) , "
+                                    + values_not_found + "was not found");
+
+                    writer.println("N = " + i + " $$$$  ArrayList Remove $$$$");
+
+                    writer.println(
+                            "Removal @ the End =  " + ArrayList_Remove(i, LinkedList_end, "end") + "(ms)");
+                    writer.flush();
+
+                    writer.println(
+                            "Remove @ Random location =  " + ArrayList_Remove(i,
+                                    LinkedList_random, "random") + "(ms), and " + index_out_bound
+                                    + " were OUT of bounds " + values_not_found + " values were not found");
+                    writer.flush();
+
+                    writer.println(
+                            "Removal @ the Start =  " + ArrayList_Remove(i, LinkedList_start, "start") + "(ms)");
+                    writer.flush();
+                    myLinkedList_Byvalue = new MyLinkedList<>();
+                    temp = ArrayList_Insertion(i, myLinkedList_Byvalue, "random");
+                    writer.println(
+                            "Removal @ the ByValue =  " + ArrayList_Remove(i, myLinkedList_Byvalue, "byValue")
+                                    + "(ms) , "
+                                    + values_not_found + " was NOT found and " + values_not_found
+                                    + " values were not found\n");
+                    writer.flush();
 
                 }
-
-                writer.println("N = " + i + " ##### ArrayList Inserting  $$$$####");
-                ArrayList_end = new ArrayList<>();
-                writer.println(
-                        "Inserting @ the End =  " + ArrayList_Insertion(i, ArrayList_end, "end") + "(ms)");
-                ArrayList_random = new ArrayList<>();
-                writer.println(
-                        "Inserting @ Random location =  " + ArrayList_Insertion(i,
-                                ArrayList_random, "random") + "(ms)");
-                ArrayList_start = new ArrayList<>();
-                writer.println(
-                        "Inserting @ the Start =  " + ArrayList_Insertion(i, ArrayList_start, "start") + "(ms)");
-
-                writer.println("N = " + i + " ##### LinkedList Inserting  $$$$####");
-                LinkedList_end = new LinkedList<>();
-                writer.println(
-                        "Inserting @ the End =  " + ArrayList_Insertion(i, LinkedList_end, "end") + "(ms)");
-                writer.flush();
-                LinkedList_random = new LinkedList<>();
-                writer.println(
-                        "Inserting @ Random location =  " + ArrayList_Insertion(i,
-                                LinkedList_random, "random") + "(ms)");
-                writer.flush();
-
-                LinkedList_start = new LinkedList<>();
-                writer.println(
-                        "Inserting @ the Start =  " + ArrayList_Insertion(i, LinkedList_start, "start") + "(ms)");
-                writer.flush();
-
-                writer.println("\nN = " + i + " $$$$ ArrayList Remove $$$$");
-
-                writer.println(
-                        "Removal @ the End =  " + ArrayList_Remove(i, ArrayList_end, "end") + "(ms)");
-
-                writer.println(
-                        "Removal @ Random location =  " + ArrayList_Remove(i,
-                                ArrayList_random, "random") + "(ms), and " + index_out_bound
-                                + " were out of bounds  and " + values_not_found + " values were not found");
-
-                writer.println(
-                        "Removal @ the Start =  " + ArrayList_Remove(i, ArrayList_start, "start") + "(ms)");
-                ArrayList_Byvalue = new ArrayList<>();
-                long temp = ArrayList_Insertion(i, ArrayList_Byvalue, "random");
-                writer.println(
-                        "Removal @ the ByValue =  " + ArrayList_Remove(i, ArrayList_Byvalue, "byValue")
-                                + "(ms) , "
-                                + values_not_found + "was not found");
-
-                writer.println("N = " + i + " $$$$  ArrayList Remove $$$$");
-
-                writer.println(
-                        "Removal @ the End =  " + ArrayList_Remove(i, LinkedList_end, "end") + "(ms)");
-                writer.flush();
-
-                writer.println(
-                        "Remove @ Random location =  " + ArrayList_Remove(i,
-                                LinkedList_random, "random") + "(ms), and " + index_out_bound
-                                + " were OUT of bounds " + values_not_found + " values were not found");
-                writer.flush();
-
-                writer.println(
-                        "Removal @ the Start =  " + ArrayList_Remove(i, LinkedList_start, "start") + "(ms)");
-                writer.flush();
-                myLinkedList_Byvalue = new MyLinkedList<>();
-                temp = ArrayList_Insertion(i, myLinkedList_Byvalue, "random");
-                writer.println(
-                        "Removal @ the ByValue =  " + ArrayList_Remove(i, myLinkedList_Byvalue, "byValue")
-                                + "(ms) , "
-                                + values_not_found + " was NOT found and " + values_not_found
-                                + " values were not found\n");
-                writer.flush();
 
             }
             writer.close();
