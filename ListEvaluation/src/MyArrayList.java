@@ -37,8 +37,7 @@ public class MyArrayList<E> implements List<E> {
     public void add(int index, E element) {
 
         if (index < 0 || index > numb_elements) {
-            System.out.println("Index invalid. Element will be placed at the end.");
-            index = numb_elements;
+            throw new IndexOutOfBoundsException("Index out of bound in MyArrayList");
         }
 
         if (numb_elements == array.length) {
@@ -63,8 +62,8 @@ public class MyArrayList<E> implements List<E> {
     public E remove(int index) {
 
         if (index < 0 || index >= numb_elements) {
-            ListTester.index_out_bound++;
-            return null;
+            throw new IndexOutOfBoundsException("Index out of bound in MyArrayList");
+
         }
         E temp = array[index];
 

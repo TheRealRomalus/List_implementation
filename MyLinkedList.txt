@@ -1,0 +1,43 @@
+
+N = 10 ##### MyLinkedList Inserting  $$$$####
+Inserting @ the End =  10916(ms)
+Inserting @ Random location =  6625(ms)
+Inserting @ the Start =  3333(ms)
+N = 10 ##### MyArrayList Remove ####
+Removal @ the End =  4208(ms)
+Remove @ Random location =  3249(ms), and 4 were OUT of bounds
+Removal @ the Start =  1333(ms)
+Removal @ the ByValue =  12210(ms) , 12 was NOT found
+
+N = 100 ##### MyLinkedList Inserting  $$$$####
+Inserting @ the End =  22002(ms)
+Inserting @ Random location =  45416(ms)
+Inserting @ the Start =  56039(ms)
+N = 100 ##### MyArrayList Remove ####
+Removal @ the End =  39999(ms)
+Remove @ Random location =  35376(ms), and 40 were OUT of bounds
+Removal @ the Start =  16041(ms)
+Removal @ the ByValue =  229543(ms) , 111 was NOT found
+
+N = 1000 ##### MyLinkedList Inserting  $$$$####
+Inserting @ the End =  135538(ms)
+Inserting @ Random location =  617335(ms)
+Inserting @ the Start =  623406(ms)
+N = 1000 ##### MyArrayList Remove ####
+Removal @ the End =  1083115(ms)
+Remove @ Random location =  595365(ms), and 419 were OUT of bounds
+Removal @ the Start =  351651(ms)
+Removal @ the ByValue =  3552185(ms) , 1173 was NOT found
+
+N = 10000 ##### MyLinkedList Inserting  $$$$####
+Inserting @ the End =  1034004(ms)
+Inserting @ Random location =  125531709(ms)
+Inserting @ the Start =  124984002(ms)
+N = 10000 ##### MyArrayList Remove ####
+Removal @ the End =  95918491(ms)
+Remove @ Random location =  140484239(ms), and 4070 were OUT of bounds
+Removal @ the Start =  67896294(ms)
+Removal @ the ByValue =  408279589(ms) , 11613 was NOT found
+
+N = 1000000 ##### MyLinkedList Inserting  $$$$####
+Inserting @ the End =  98447566(ms)

@@ -1,0 +1,86 @@
+N = 10 ##### ArrayList Inserting  $$$$####
+Inserting @ the End =  9127(ms)
+Inserting @ Random location =  5416(ms)
+Inserting @ the Start =  3499(ms)
+N = 10 ##### LinkedList Inserting  $$$$####
+Inserting @ the End =  22707(ms)
+Inserting @ Random location =  7292(ms)
+Inserting @ the Start =  3750(ms)
+
+N = 10 $$$$ ArrayList Remove $$$$
+Removal @ the End =  4582(ms)
+Removal @ Random location =  2394915(ms), and 2 were out of bounds  and 2 values were not found
+Removal @ the Start =  2250(ms)
+Removal @ the ByValue =  14001(ms) , 9was not found
+N = 10 $$$$  ArrayList Remove $$$$
+Removal @ the End =  8584(ms)
+Remove @ Random location =  20624(ms), and 4 were OUT of bounds 4 values were not found
+Removal @ the Start =  2084(ms)
+Removal @ the ByValue =  9126(ms) , 5 was NOT found and 5 values were not found
+
+N = 100 ##### ArrayList Inserting  $$$$####
+Inserting @ the End =  24543(ms)
+Inserting @ Random location =  47128(ms)
+Inserting @ the Start =  33752(ms)
+N = 100 ##### LinkedList Inserting  $$$$####
+Inserting @ the End =  26747(ms)
+Inserting @ Random location =  44546(ms)
+Inserting @ the Start =  28832(ms)
+
+N = 100 $$$$ ArrayList Remove $$$$
+Removal @ the End =  17170(ms)
+Removal @ Random location =  378416(ms), and 40 were out of bounds  and 40 values were not found
+Removal @ the Start =  20127(ms)
+Removal @ the ByValue =  218417(ms) , 69was not found
+N = 100 $$$$  ArrayList Remove $$$$
+Removal @ the End =  26207(ms)
+Remove @ Random location =  82458(ms), and 30 were OUT of bounds 30 values were not found
+Removal @ the Start =  14167(ms)
+Removal @ the ByValue =  159170(ms) , 68 was NOT found and 68 values were not found
+
+N = 1000 ##### ArrayList Inserting  $$$$####
+Inserting @ the End =  100133(ms)
+Inserting @ Random location =  270258(ms)
+Inserting @ the Start =  147562(ms)
+N = 1000 ##### LinkedList Inserting  $$$$####
+Inserting @ the End =  172914(ms)
+Inserting @ Random location =  507167(ms)
+Inserting @ the Start =  111101(ms)
+
+N = 1000 $$$$ ArrayList Remove $$$$
+Removal @ the End =  106452(ms)
+Removal @ Random location =  2727578(ms), and 358 were out of bounds  and 358 values were not found
+Removal @ the Start =  74456(ms)
+Removal @ the ByValue =  3564230(ms) , 660was not found
+N = 1000 $$$$  ArrayList Remove $$$$
+Removal @ the End =  139421(ms)
+Remove @ Random location =  732063(ms), and 379 were OUT of bounds 379 values were not found
+Removal @ the Start =  184450(ms)
+Removal @ the ByValue =  3465555(ms) , 685 was NOT found and 685 values were not found
+
+N = 10000 ##### ArrayList Inserting  $$$$####
+Inserting @ the End =  1058263(ms)
+Inserting @ Random location =  2883142(ms)
+Inserting @ the Start =  4901198(ms)
+N = 10000 ##### LinkedList Inserting  $$$$####
+Inserting @ the End =  995567(ms)
+Inserting @ Random location =  53953052(ms)
+Inserting @ the Start =  782727(ms)
+
+N = 10000 $$$$ ArrayList Remove $$$$
+Removal @ the End =  780669(ms)
+Removal @ Random location =  9100383(ms), and 3703 were out of bounds  and 3703 values were not found
+Removal @ the Start =  2440827(ms)
+Removal @ the ByValue =  39568524(ms) , 6777was not found
+N = 10000 $$$$  ArrayList Remove $$$$
+Removal @ the End =  890343(ms)
+Remove @ Random location =  60565517(ms), and 3705 were OUT of bounds 3705 values were not found
+Removal @ the Start =  15209232(ms)
+Removal @ the ByValue =  402225516(ms) , 6800 was NOT found and 6800 values were not found
+
+N = 1000000 ##### ArrayList Inserting  $$$$####
+Inserting @ the End =  22136103(ms)
+Inserting @ Random location =  22892532428(ms)
+Inserting @ the Start =  45031091646(ms)
+N = 1000000 ##### LinkedList Inserting  $$$$####
+Inserting @ the End =  56241913(ms)

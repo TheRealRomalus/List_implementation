@@ -47,34 +47,49 @@ public class MyLinkedList<E> implements List<E> {
     }
 
     public void add(int index, E element) {
-
         if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Index " + index + " out of bound add ");
+            throw new IndexOutOfBoundsException("Index out of bound in MyLinkedList");
+
         }
-        Node<E> tempElement = new Node<E>(element);
 
-        if (index == size) {
+        Node<E> newNode = new Node<>(element);
+
+        if (index == 0) {
+            newNode.nextNode = head;
+            if (head != null) {
+                head.previousNode = newNode;
+            }
+            head = newNode;
+
+            if (size == 0) {
+                tail = newNode;
+            }
+        }
+
+        else if (index == size) {
             add(element);
-
+            return;
         } else {
             Node<E> temp = head;
+            if (index < size / 2) {
+                temp = head;
+                for (int i = 0; i < index; i++) {
+                    temp = temp.nextNode;
+                }
+            } else {
+                for (int i = 0; i < index; i++) {
+                    temp = temp.nextNode;
+                }
 
-            while (temp != null && index != 0) {
-
-                temp = temp.nextNode;
-                index--;
             }
 
-            tempElement.nextNode = temp;
-            tempElement.previousNode = temp.previousNode;
-            temp.previousNode.nextNode = tempElement;
-            temp.previousNode = tempElement;
-            return;
-
+            newNode.nextNode = temp;
+            newNode.previousNode = temp.previousNode;
+            temp.previousNode.nextNode = newNode;
+            temp.previousNode = newNode;
         }
 
         size++;
-
     }
 
     public void clear() {
@@ -85,27 +100,53 @@ public class MyLinkedList<E> implements List<E> {
     }
 
     public E remove(int index) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Index out of bound add");
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of bound in MyLinkedList");
         }
 
         Node<E> temp = head;
-
-        while (temp != null) {
-
-            if (index == 0) {
-                temp.previousNode.nextNode = temp.nextNode;
-                temp.nextNode.previousNode = temp.previousNode;
-                size--;
-                return temp.data;
+        if (index < size / 2) {
+            temp = head;
+            for (int i = 0; i < index; i++) {
+                temp = temp.nextNode;
             }
-
-            temp = temp.nextNode;
-            index--;
+        } else {
+            temp = tail;
+            for (int i = size - 1; i > index; i--) {
+                temp = temp.previousNode;
+            }
         }
 
-        return null;
+        if (index == 0) {
+            E data = head.data;
+            head = head.nextNode;
+            if (head != null) {
+                head.previousNode = null;
+            } else {
+                tail = null;
+            }
+            size--;
+            return data;
+        }
 
+        for (int i = 0; i < index; i++) {
+            temp = temp.nextNode;
+        }
+
+        if (temp == tail) {
+            tail = tail.previousNode;
+            if (tail != null) {
+                tail.nextNode = null;
+            }
+        }
+
+        else {
+            temp.previousNode.nextNode = temp.nextNode;
+            temp.nextNode.previousNode = temp.previousNode;
+        }
+
+        size--;
+        return temp.data;
     }
 
     @SuppressWarnings("unchecked")
@@ -267,21 +308,4 @@ public class MyLinkedList<E> implements List<E> {
         throw new UnsupportedOperationException("Unimplemented method 'subList'");
     }
 
-    public static void main(String[] args) {
-        MyLinkedList<Integer> test = new MyLinkedList<>();
-        test.add(1);
-        test.add(2);
-        test.add(3);
-        test.add(4);
-        test.add(5);
-        test.add(2);
-
-        System.out.println(test);
-        System.out.println((test.remove((Integer) 2)) ? "did find and removed" : "didn't find ");
-        System.out.println(test.size);
-
-        System.out.println(test);
-        System.out.println((test.remove((Integer) 4)) ? "did find and removed" : "didn't find ");
-        System.out.println(test.size);
-    }
 }
