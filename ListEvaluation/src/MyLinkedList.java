@@ -49,7 +49,7 @@ public class MyLinkedList<E> implements List<E> {
     public void add(int index, E element) {
 
         if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Index out of bound add");
+            throw new IndexOutOfBoundsException("Index " + index + " out of bound add ");
         }
         Node<E> tempElement = new Node<E>(element);
 

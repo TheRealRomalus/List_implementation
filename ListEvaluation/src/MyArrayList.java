@@ -37,20 +37,18 @@ public class MyArrayList<E> implements List<E> {
     public void add(int index, E element) {
 
         if (index < 0 || index > numb_elements) {
-            throw new IndexOutOfBoundsException("Index out of bound add");
+            System.out.println("Index invalid. Element will be placed at the end.");
+            index = numb_elements;
         }
 
-        if (array[index] == null) {
-            array[index] = element;
-            numb_elements++;
+        if (numb_elements == array.length) {
             resize();
-
-        } else {
-
-            add(index + 1, array[index]);
-            array[index] = element;
-
         }
+
+        System.arraycopy(array, index, array, index + 1, numb_elements - index);
+
+        array[index] = element;
+        numb_elements++;
 
     }
 
@@ -65,16 +63,17 @@ public class MyArrayList<E> implements List<E> {
     public E remove(int index) {
 
         if (index < 0 || index >= numb_elements) {
-            throw new IndexOutOfBoundsException("Index out of bound in remove");
+            ListTester.index_out_bound++;
+            return null;
         }
-
         E temp = array[index];
 
-        for (int i = index; i < numb_elements; i++) {
-            array[i] = array[i + 1];
-        }
+        System.arraycopy(array, index + 1, array, index, numb_elements - index - 1);
+
         numb_elements--;
-        resize();
+        if (numb_elements < array.length / 4) {
+            resize();
+        }
 
         return temp;
 
@@ -83,15 +82,12 @@ public class MyArrayList<E> implements List<E> {
     @SuppressWarnings("unchecked")
     public boolean remove(Object object) {
 
-        int index = 0;
-        while (array[index] != null) {
-            if (array[index].equals((E) object)) {
-                return (remove(index) != null);
-
+        for (int index = 0; index < numb_elements; index++) {
+            if (array[index].equals(object)) {
+                remove(index);
+                return true;
             }
-            index++;
         }
-
         return false;
 
     }
